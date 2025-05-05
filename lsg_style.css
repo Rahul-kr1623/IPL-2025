@@ -1,0 +1,120 @@
+/* Prevent horizontal scrolling */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Ensure all content stays within the viewport */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+h2{
+    color: cyan;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.home-button {
+    text-decoration: none;
+    background-color: cyan;
+    color: navy;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.home-button:hover {
+    background-color: white;
+    color: navy;
+    transform: scale(1.1);  /* Slightly enlarges */
+    filter: drop-shadow(5px 5px 15px cyan);
+}
+
+
+.team-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 3px 3px 7px cyan;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Centering the player cards container */
+.squad-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    padding: 20px;
+}
+
+/* Ensuring each player card is centered */
+.player-card {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border: 3px solid cyan;
+    border-radius: 15px;
+    background-color: rgba(0, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Player image styling */
+.player-image {
+    width: 150px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.player-image:hover {
+    transform: scale(1.2) translateY(-10px);
+    filter: drop-shadow(0px 0px 15px cyan);
+}
+
+/* Player info alignment */
+.player-info {
+    flex-grow: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* Player details */
+.player-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 2px 2px 5px cyan;
+}
+
+.player-role {
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+}
+
+.player-stats {
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}

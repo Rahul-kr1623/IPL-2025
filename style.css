@@ -1,0 +1,940 @@
+/* Prevent horizontal scrolling */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Ensure all content stays within the viewport */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+a {
+    text-decoration: none; /* Removes underline */
+}
+
+@media (max-width: 768px) {
+    .match-card {
+      flex-direction: column;
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .team-logo {
+      width: 50px;
+    }
+  }
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.separator {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(227, 45, 21);
+    margin-top: 20px;
+}
+.separator1 {
+    width: 100%;
+    height: 40px;
+    background-color: yellow;
+    margin-top: 20px;
+}
+
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.trophy-container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 30px;
+}
+
+.trophy {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(10px 10px 10px red);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    max-width: 100%;
+}
+
+.trophy:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(15px 15px 20px red);
+}
+
+/* Schedule Container */
+.schedule-container {
+    flex-grow: 1;
+    max-height: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    border: 2px solid red;
+    white-space: nowrap;
+}
+
+.schedule-container::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+.schedule-container::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 4px;
+}
+
+/* Match Table */
+.match-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Ensures better spacing */
+}
+
+.match-table th, .match-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.match-table th {
+    background-color: #444;
+    color: white;
+}
+
+.scorecard-btn {
+    padding: 6px 12px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.scorecard-btn:hover {
+    background-color: rgb(233, 40, 40);
+}
+
+/* Team Logos */
+.team-logo {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.squad-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px; /* Increased padding for more height */
+    border: 3px solid yellow;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 0, 0.1);
+    min-height: 250px; /* Ensures better height */
+}
+
+.squad-image {
+    width: 35%; /* Increased width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.csk-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.csk-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px yellow);
+}
+
+.squad-details {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name {
+    font-size: 40px; /* Slightly larger text */
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 3px 3px 7px yellow;
+}
+
+.squad-button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.squad-button:hover {
+    background-color: gold;
+    transform: scale(1.1);  /* Slightly enlarges */
+    filter: drop-shadow(5px 5px 15px yellow);
+}
+
+.separator2 {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(248, 101, 3);
+    margin-top: 20px;
+}
+
+
+.srh-container {
+    border: 3px solid orange;
+    background-color: rgba(255, 165, 0, 0.1);
+}
+
+.srh-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.srh-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px orange);
+}
+
+.srh-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: orange;
+    text-shadow: 3px 3px 7px orange;
+}
+
+.srh-button {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.srh-button:hover {
+    background-color: darkorange;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px orange);
+}
+
+.separator3 {
+    width: 100%;
+    height: 40px;
+    background-color: blue;
+    margin-top: 20px;
+}
+
+
+/* Mumbai Indians Squad Box */
+.squad-container-mi {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid blue;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 255, 0.1);
+    min-height: 300px; /* Ensures proper height */
+}
+
+/* Squad Image */
+.squad-image-mi {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mi-image {
+    margin-left: 40px;
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* 50% more height */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.mi-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px blue);
+}
+
+/* Squad Details */
+.squad-details-mi {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+/* Team Name */
+.team-name-mi {
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 3px 3px 7px blue;
+}
+
+/* Squad Button */
+.squad-button-mi {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.squad-button-mi:hover {
+    background-color: dodgerblue;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px blue);
+}
+
+.separator4 {
+    width: 100%;
+    height: 40px;
+    background-color: purple;
+    margin-top: 20px;
+}
+
+
+.squad-container-kkr {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid purple;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(128, 0, 128, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-kkr {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kkr-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.kkr-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px purple);
+}
+
+.squad-details-kkr {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-kkr {
+    font-size: 40px;
+    font-weight: bold;
+    color: purple;
+    text-shadow: 3px 3px 7px purple;
+}
+
+.squad-button-kkr {
+    display: block;
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.squad-button-kkr:hover {
+    background-color: #800080;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px purple);
+}
+
+
+.squad-container-rcb {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid red;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(255, 0, 0, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-rcb {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rcb-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.rcb-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px red);
+}
+
+.squad-details-rcb {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-rcb {
+    font-size: 40px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 3px 3px 7px red;
+}
+
+.squad-button-rcb {
+    display: block;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+
+}
+
+.squad-button-rcb:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px red);
+}
+
+
+.separator5 {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(230, 18, 198);
+    margin-top: 20px;
+}
+
+
+.squad-container-rr {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid hotpink;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(255, 192, 203, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-rr {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rr-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.rr-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px hotpink);
+}
+
+.squad-details-rr {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-rr {
+    font-size: 40px;
+    font-weight: bold;
+    color: hotpink;
+    text-shadow: 3px 3px 7px hotpink;
+}
+
+.squad-button-rr {
+    display: block;
+    background-color: hotpink;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.squad-button-rr:hover {
+    background-color: hotpink;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px pink);
+}
+
+.separator6 {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(4, 10, 198);
+    margin-top: 20px;
+}
+
+
+.squad-container-gt {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 139, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-gt {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gt-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.gt-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px darkblue);
+}
+
+.squad-details-gt {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-gt {
+    font-size: 40px;
+    font-weight: bold;
+    color: darkblue;
+    text-shadow: 3px 3px 7px darkblue;
+}
+
+.squad-button-gt {
+    display: block;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.squad-button-gt:hover {
+    background-color: mediumblue;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px darkblue);
+}
+
+.separator7 {
+    width: 100%;
+    height: 40px;
+    background-color: cyan;
+    margin-top: 20px;
+}
+
+.squad-container-lsg {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid cyan;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(0, 255, 255, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-lsg {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lsg-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.lsg-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px cyan);
+}
+
+.squad-details-lsg {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-lsg {
+    font-size: 40px;
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 3px 3px 7px cyan;
+}
+
+.squad-button-lsg {
+    display: block;
+    background-color: cyan;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.squad-button-lsg:hover {
+    background-color: lightcyan;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px cyan);
+}
+
+.separator8 {
+    width: 100%;
+    height: 40px;
+    background-color: navy;
+    margin-top: 20px;
+}
+
+
+.squad-container-dc {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid navy;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 128, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-dc {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dc-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.dc-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px navy);
+}
+
+.squad-details-dc {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-dc {
+    font-size: 40px;
+    font-weight: bold;
+    color: navy;
+    text-shadow: 3px 3px 7px navy;
+}
+
+.squad-button-dc {
+    display: block;
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.squad-button-dc:hover {
+    background-color: darkblue;
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px navy);
+}
+
+
+.separator9 {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(227, 58, 58);
+    margin-top: 20px;
+}
+
+.squad-container-pbks {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 25px;
+    border: 3px solid rgb(227, 58, 58);
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: rgba(227, 58, 58, 0.1);
+    min-height: 250px;
+}
+
+.squad-image-pbks {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pbks-image {
+    margin-left: 60px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.pbks-image:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(10px 10px 20px rgb(227, 58, 58));
+}
+
+.squad-details-pbks {
+    margin-left: 40px;
+    flex-grow: 1;
+    color: white;
+}
+
+.team-name-pbks {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(227, 58, 58);
+    text-shadow: 3px 3px 7px rgb(227, 58, 58);
+}
+
+.squad-button-pbks {
+    display: block;
+    background-color: rgb(227, 58, 58);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.squad-button-pbks:hover {
+    background-color: rgb(200, 50, 50);
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px rgb(227, 58, 58));
+}
+
+
+.footer {
+    background-color: red;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.instagram { background-color: #E4405F; }
+.facebook { background-color: #1877F2; }
+.linkedin { background-color: #0077B5; }
+.twitter { background-color: #1DA1F2; }
+.github { background-color: #030506; }
+
+.instagram:hover { 
+    box-shadow: 0px 0px 15px #E4405F; 
+    transform: scale(1.2); 
+}
+.facebook:hover { 
+    box-shadow: 0px 0px 15px #1877F2; 
+    transform: scale(1.2); 
+}
+.linkedin:hover { 
+    box-shadow: 0px 0px 15px #0077B5; 
+    transform: scale(1.2); 
+}
+.twitter:hover { 
+    box-shadow: 0px 0px 15px #1DA1F2; 
+    transform: scale(1.2); 
+}
+.twitter:hover { 
+    box-shadow: 0px 0px 15px #030506; 
+    transform: scale(1.2); 
+}
+
+.copyright {
+    font-size: 16px;
+    font-weight: bold;
+}
